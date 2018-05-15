@@ -9,7 +9,7 @@ directories:
 # 源码所在分支
 branches:
 only:
-- master
+- source
 
 # 安装依赖
 install:
@@ -24,8 +24,7 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN # Set in travis-ci.org dashboard, marked secure
+  github-token: $GITHUB_TOKEN 
   keep-history: true
   local-dir: public
-  on:
-    branch: master
+  target-branch: master
