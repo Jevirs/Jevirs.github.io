@@ -29,7 +29,7 @@
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Jevirs&#39;s site"/>
+    <meta property="og:site_name" content="Dare To Win"/>
 
     <!--Type page-->
     
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>canvas星空 - Jevirs&#39;s site</title>
+    <title>canvas星空 - Dare To Win</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -72,6 +72,8 @@
 
 
     <!-- favicon -->
+    
+    <link rel="icon" href="/images/icon.png">
     
 	
 </head>
@@ -115,17 +117,9 @@
                     </li>
                 
                     <li>
-                        <a href="/tags">
+                        <a href="/about">
                             
-                                Tags
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/categories">
-                            
-                                Categories
+                                About
                             
                         </a>
                     </li>
@@ -149,7 +143,7 @@
     <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 
-<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+<header class="intro-header" style="background-image: url('/images/canvas-sky/sky.gif')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -181,7 +175,7 @@
                         
 
 
-<a href="/tags/canvas/">#canvas</a> <a href="/tags/animation/">#animation</a>
+<a href="/tags/code/">#code</a>
 
 
                     
@@ -193,26 +187,11 @@
 
             <!-- Gallery -->
             
-                
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <div class="row">
-        
-            
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
-                    <a href="#" data-featherlight="http://7xkyc9.com1.z0.glb.clouddn.com/sky.gif">
-                        <img src="http://7xkyc9.com1.z0.glb.clouddn.com/sky.gif" class="img-thumbnail img-responsive" />
-                    </a>
-                </div>
-            
-        
-    </div>
-</div>
-            
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p>效果就是这样：</p>
-<p><img src="http://7xkyc9.com1.z0.glb.clouddn.com/sky.gif" alt="desc"></p>
+<p><img src="/images/canvas-sky/sky.gif" alt="desc"></p>
 <p>具体步骤如下</p>
 <h2 id="1-绘制背景"><a href="#1-绘制背景" class="headerlink" title="1.绘制背景"></a>1.绘制背景</h2><p>一件事，将天空铺满</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// html代码中需要有canvas节点 </span><br><span class="line">var canvas = document.getElementById(&apos;canvas&apos;);</span><br><span class="line">var ctx = canvas.getContext(&apos;2d&apos;);</span><br><span class="line"></span><br><span class="line">var width = window.innerWidth;</span><br><span class="line">var height = window.innerHeight;</span><br><span class="line">    </span><br><span class="line">canvas.height = height;</span><br><span class="line">canvas.width = width;</span><br><span class="line"></span><br><span class="line">ctx.fillStyle = &quot;#000&quot;;</span><br><span class="line">ctx.rect(0, 0, width, height);</span><br><span class="line">ctx.fill();</span><br></pre></td></tr></table></figure>
@@ -229,7 +208,7 @@
 <li>星星如果到了画布的边界，需要使他返回，简单点就是速度方向相反就行。</li>
 </ol>
 <p>改造后如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">var stars = genStars(1000);</span><br><span class="line">function drawStars() &#123;</span><br><span class="line">    // 清除画布并重新绘制天空</span><br><span class="line">    ctx.clearRect(0, 0, width, height);</span><br><span class="line">    ctx.fillStyle = &quot;#000&quot;;</span><br><span class="line">    ctx.rect(0, 0, width, height);</span><br><span class="line">    ctx.fill();</span><br><span class="line">    for (var i = 0, length = stars.length; i &lt; length; i++) &#123;</span><br><span class="line">        var star = stars[i];</span><br><span class="line">        // 出界后折返</span><br><span class="line">        if (star.posX &lt; 0 || star.posX &gt; width) &#123;</span><br><span class="line">            star.flyX = -star.flyX;</span><br><span class="line">        &#125;;</span><br><span class="line">        if (star.posY &lt; 0 || star.posY &gt; height) &#123;</span><br><span class="line">            star.flyY = -star.flyY;</span><br><span class="line">        &#125;;</span><br><span class="line">        // 绘制星星</span><br><span class="line">        ctx.beginPath();</span><br><span class="line">        ctx.fillStyle = star.color;</span><br><span class="line">        // 添加位移</span><br><span class="line">        star.posX += star.flyX;</span><br><span class="line">        star.posY += star.flyY;</span><br><span class="line">        ctx.arc(star.posX, star.posY, star.r, 0, Math.PI * 2, true);</span><br><span class="line">        ctx.fill();</span><br><span class="line">    &#125;;</span><br><span class="line">    // 继续请求下一帧</span><br><span class="line">    requestAnimationFrame(drawStars);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>此时繁星移动的动画完成<br><img src="http://7xkyc9.com1.z0.glb.clouddn.com/star.gif" alt="desc"></p>
+<p>此时繁星移动的动画完成<br><img src="/images/canvas-sky/star.gif" alt="desc"></p>
 <h2 id="3-增加效果"><a href="#3-增加效果" class="headerlink" title="3.增加效果"></a>3.增加效果</h2><p>为实现多种效果，获取鼠标的坐标位置是前提条件，将画布上的鼠标位置做记录，并监听鼠标移动事件，更新画布上的鼠标焦点坐标。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 初始值</span><br><span class="line">var mouse = &#123;</span><br><span class="line">    posX: -20000,</span><br><span class="line">    posY: -20000</span><br><span class="line">&#125;;</span><br><span class="line">// 监听鼠标移动事件，更新画布上鼠标坐标</span><br><span class="line">canvas.onmousemove = function(e) &#123;</span><br><span class="line">    mouse.posX = e.clientX;</span><br><span class="line">    mouse.posY = e.clientY;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="3-1-放射状"><a href="#3-1-放射状" class="headerlink" title="3.1 放射状"></a>3.1 放射状</h3><p>逻辑：以鼠标坐标为圆心，半径为R (distance)的范围内的星星与鼠标相连<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 用以获取两点间距离的工具函数</span><br><span class="line">function getDistance(p1, p2) &#123;</span><br><span class="line">    return Math.sqrt(Math.pow(Math.abs(p1.posX - p2.posX), 2) + Math.pow(Math.abs(p1.posY - p2.posY), 2));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//在遍历stars时添加</span><br><span class="line">if (getDistance(mouse, star) &lt; distance) &#123;</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.moveTo(mouse.posX, mouse.posY);</span><br><span class="line">    ctx.lineTo(star.posX, star.posY);</span><br><span class="line">    ctx.strokeStyle = star.color;</span><br><span class="line">    ctx.stroke();</span><br><span class="line">    ctx.closePath();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -238,7 +217,6 @@
 <p>2.范围内星星吸引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var dis = getDistance(mouse, star);</span><br><span class="line">if (dis &lt; distance) &#123;</span><br><span class="line">    star.flyX = (mouse.posX - star.posX) / dis;</span><br><span class="line">    star.flyY = (mouse.posY - star.posY) / dis;</span><br><span class="line">    if (dis + 50 &gt; distance) &#123;</span><br><span class="line">        star.flyX = (Math.random() - 0.5) / 5;</span><br><span class="line">        star.flyY = (Math.random() - 0.5) / 5;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>3.范围内星星排斥<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var dis = getDistance(mouse, star);</span><br><span class="line">if (dis &lt; distance) &#123;</span><br><span class="line">    star.flyX = -(mouse.posX - star.posX) / dis;</span><br><span class="line">    star.flyY = -(mouse.posY - star.posY) / dis;</span><br><span class="line">    if (dis + 50 &gt; distance) &#123;</span><br><span class="line">        star.flyX = (Math.random() - 0.5) / 5;</span><br><span class="line">        star.flyY = (Math.random() - 0.5) / 5;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>都是一些稍作改动就能实现的玩法。</p>
-<p>具体<a href="../examples/canvas.html">玩一下</a></p>
 
 
                 
@@ -266,7 +244,25 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                     
+                        <li>
+                            <a href="https://twitter.com/zhujiawei93" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
 
+                    
+                        <li>
+                            <a href="https://www.facebook.com/james.zhu.338863" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
                     
 
                     
@@ -283,12 +279,19 @@
                     
 
                     
+                        <li>
+                            <a href="mailto:z644658982@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
 
                     
                 </ul>
                 <p class="copyright text-muted">&copy; 2018 Jevirs<br></p>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
             </div>
         </div>
     </div>

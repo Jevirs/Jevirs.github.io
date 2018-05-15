@@ -29,7 +29,7 @@
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Jevirs&#39;s site"/>
+    <meta property="og:site_name" content="Dare To Win"/>
 
     <!--Type page-->
     
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>事件模型实践 - Jevirs&#39;s site</title>
+    <title>事件模型实践 - Dare To Win</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -72,6 +72,8 @@
 
 
     <!-- favicon -->
+    
+    <link rel="icon" href="/images/icon.png">
     
 	
 </head>
@@ -115,17 +117,9 @@
                     </li>
                 
                     <li>
-                        <a href="/tags">
+                        <a href="/about">
                             
-                                Tags
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/categories">
-                            
-                                Categories
+                                About
                             
                         </a>
                     </li>
@@ -149,7 +143,7 @@
     <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 
-<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+<header class="intro-header" style="background-image: url('/images/jsevent/jslogo.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -181,7 +175,7 @@
                         
 
 
-<a href="/tags/javascript/">#javascript</a> <a href="/tags/event/">#event</a>
+<a href="/tags/code/">#code</a>
 
 
                     
@@ -193,33 +187,18 @@
 
             <!-- Gallery -->
             
-                
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <div class="row">
-        
-            
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
-                    <a href="#" data-featherlight="http://7xkyc9.com1.z0.glb.clouddn.com/jsevent.jpg">
-                        <img src="http://7xkyc9.com1.z0.glb.clouddn.com/jsevent.jpg" class="img-thumbnail img-responsive" />
-                    </a>
-                </div>
-            
-        
-    </div>
-</div>
-            
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <h1 id="浏览器事件模型"><a href="#浏览器事件模型" class="headerlink" title="浏览器事件模型"></a>浏览器事件模型</h1><h2 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h2><p>1.说起浏览器的原生的事件模型，首先印入脑海的是<code>onclick</code>,<code>onload</code>等事件，然后才是<code>addEventListener</code>,<code>removeEventListener</code>,确实在平常的编码过程中接触到更多的是封装过的<code>on</code>,<code>off</code>之流。<br>2.在日常处理click等事件之时，会使用到阻止冒泡（<code>event.stopPropagation</code>），阻止默认行为(<code>event.preventDefault</code>)或者直接<code>reture false</code>,但却没有真正去深入了解事件的传递机制。</p>
 <h2 id="发现"><a href="#发现" class="headerlink" title="发现"></a>发现</h2><p>今天阅读的时获取了很多新知识，在此作记录</p>
 <p>首先是html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;test&lt;/title&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    	#parent&#123;</span><br><span class="line">    		width: 100px;</span><br><span class="line">    		height: 100px;</span><br><span class="line">    		background-color: green;</span><br><span class="line">    	&#125;</span><br><span class="line">    	#child&#123;</span><br><span class="line">    		width: 50px;</span><br><span class="line">    		height: 50px;</span><br><span class="line">    		background-color: blue;</span><br><span class="line">    	&#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&apos;parent&apos;&gt;</span><br><span class="line">        &lt;p id=&quot;child&quot;&gt;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>大概就这样<br><img src="http://7xkyc9.com1.z0.glb.clouddn.com/image.png" alt="desc"></p>
+<p>大概就这样<br><img src="/images/jsevent/js1.png" alt="desc"></p>
 <p>然后添加事件,从window,document,html,body,parent,child依次添加捕获与冒泡事件的监听，并打印出事件的目标节点和当前节点。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var parent = document.getElementById(&quot;parent&quot;);</span><br><span class="line">    var child = document.getElementById(&quot;child&quot;);</span><br><span class="line"></span><br><span class="line">    // 捕获阶段绑定事件</span><br><span class="line">    window.addEventListener(&quot;click&quot;, function(e)&#123;</span><br><span class="line">        console.log(&quot;window 捕获&quot;, e.target.nodeName, e.currentTarget.nodeName);</span><br><span class="line">    &#125;, true);</span><br><span class="line"></span><br><span class="line">    document.addEventListener(&quot;click&quot;, function(e)&#123;</span><br><span class="line">        console.log(&quot;document 捕获&quot;, e.target.nodeName, e.currentTarget.nodeName);</span><br><span class="line">    &#125;, true);</span><br><span class="line"></span><br><span class="line">    document.documentElement.addEventListener(&quot;click&quot;, function(e)&#123;</span><br><span class="line">        console.log(&quot;documentElement 捕获&quot;, e.target.nodeName, e.currentTarget.nodeName);</span><br><span class="line">    &#125;, true);</span><br><span class="line"></span><br><span class="line">    document.body.addEventListener(&quot;click&quot;, function(e)&#123;</span><br><span class="line">        console.log(&quot;body 捕获&quot;, e.target.nodeName, e.currentTarget.nodeName);</span><br><span class="line">    &#125;, true);</span><br><span class="line"></span><br><span class="line">    parent.addEventListener(&quot;click&quot;, function(e)&#123;</span><br><span class="line">        console.log(&quot;parent 捕获&quot;, e.target.nodeName, e.currentTarget.nodeName);</span><br><span class="line">    &#125;, true);</span><br><span class="line"></span><br><span class="line">    child.addEventListener(&quot;click&quot;, function(e)&#123;</span><br><span class="line">        console.log(&quot;child 捕获&quot;, e.target.nodeName, e.currentTarget.nodeName);</span><br><span class="line">    &#125;, true);</span><br><span class="line"></span><br><span class="line">    // 冒泡阶段绑定的事件</span><br><span class="line">    window.addEventListener(&quot;click&quot;, function(e)&#123;</span><br><span class="line">        console.log(&quot;window 冒泡&quot;, e.target.nodeName, e.currentTarget.nodeName);</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line">    document.addEventListener(&quot;click&quot;, function(e)&#123;</span><br><span class="line">        console.log(&quot;document 冒泡&quot;, e.target.nodeName, e.currentTarget.nodeName);</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line">    document.documentElement.addEventListener(&quot;click&quot;, function(e)&#123;</span><br><span class="line">        console.log(&quot;documentElement 冒泡&quot;, e.target.nodeName, e.currentTarget.nodeName);</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line">    document.body.addEventListener(&quot;click&quot;, function(e)&#123;</span><br><span class="line">        console.log(&quot;body 冒泡&quot;, e.target.nodeName, e.currentTarget.nodeName);</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line">    parent.addEventListener(&quot;click&quot;, function(e)&#123;</span><br><span class="line">        console.log(&quot;parent 冒泡&quot;, e.target.nodeName, e.currentTarget.nodeName);</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line">    child.addEventListener(&quot;click&quot;, function(e)&#123;</span><br><span class="line">        console.log(&quot;child 冒泡&quot;, e.target.nodeName, e.currentTarget.nodeName);</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>点击蓝色的p标签，控制台信息<br><img src="http://7xkyc9.com1.z0.glb.clouddn.com/result1.png" alt="result1"><br>是真的先捕获再冒泡吗？还是因为事件绑定的顺序？</p>
-<p>交换捕获和冒泡的绑定顺序之后<br><img src="http://7xkyc9.com1.z0.glb.clouddn.com/result2.png" alt="result2"><br>出现child的捕获冒泡顺序发生变化，原来这就是目标阶段了，当<code>target</code>与<code>currentTarget</code>相等之时就进入目标阶段，这时候绑定的事件是按绑定顺序依次触发的，所以在<code>child</code>上写的”捕获”，”冒泡”应该都改为”捕获”才对。</p>
+<p>点击蓝色的p标签，控制台信息<br><img src="/images/jsevent/js2.png" alt="result1"><br>是真的先捕获再冒泡吗？还是因为事件绑定的顺序？</p>
+<p>交换捕获和冒泡的绑定顺序之后<br><img src="/images/jsevent/js3.png" alt="result2"><br>出现child的捕获冒泡顺序发生变化，原来这就是目标阶段了，当<code>target</code>与<code>currentTarget</code>相等之时就进入目标阶段，这时候绑定的事件是按绑定顺序依次触发的，所以在<code>child</code>上写的”捕获”，”冒泡”应该都改为”捕获”才对。</p>
 <p>再做个验证：在所有事件绑定之前，添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">child.onclick = function()&#123;</span><br><span class="line">	console.log(&quot;child onclick&quot;);</span><br><span class="line">&#125;</span><br><span class="line">parent.onclick = function()&#123;</span><br><span class="line">	console.log(&quot;parent onclick&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">window.onclick = function()&#123;</span><br><span class="line">	console.log(&quot;window onclick&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>点击得到以下结果：<br><img src="http://7xkyc9.com1.z0.glb.clouddn.com/result3.png" alt="result3"></p>
+<p>点击得到以下结果：<br><img src="/images/jsevent/js4.png" alt="result3"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>1.事件的捕获是从上至下触发了<code>window</code>,<code>document</code>,<code>documentElement</code>, <code>body</code>,<code>parent</code>绑定的事件。<br>2.当来到<code>child</code>节点时，是目标阶段，事件按照绑定顺序依次触发。<br>3.冒泡阶段与捕获阶段相反，自下而上的传递，而一些<code>onclick</code>之类的事件也都在该阶段触发，但是为啥在这个阶段呢?看下一条。<br>4.IE的事件流中只存在冒泡这个阶段，所以为了跟好地兼容IE。。。至于那个只有捕获阶段的网景，有个了解就好。<br>5.到这里，标准的浏览器事件已经梳理地差不多了，可能在平时编码过程中的影响不是很大，对它的实现原理的了解不是多多益善吗？</p>
 
 
@@ -248,7 +227,25 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                     
+                        <li>
+                            <a href="https://twitter.com/zhujiawei93" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
 
+                    
+                        <li>
+                            <a href="https://www.facebook.com/james.zhu.338863" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
                     
 
                     
@@ -265,12 +262,19 @@
                     
 
                     
+                        <li>
+                            <a href="mailto:z644658982@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
 
                     
                 </ul>
                 <p class="copyright text-muted">&copy; 2018 Jevirs<br></p>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
             </div>
         </div>
     </div>
