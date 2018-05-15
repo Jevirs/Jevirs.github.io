@@ -1,9 +1,8 @@
 ---
 title: 一辆debounce的电梯
 date: 2017-01-16 19:33:56
-tags: [js,throttle,debounce]
+tags: [code]
 description: throttle与debounce广泛应用于我们的生活中
-photos: [http://7xkyc9.com1.z0.glb.clouddn.com/evelator.png]
 ---
 
 ## 发现问题

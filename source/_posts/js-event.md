@@ -1,8 +1,8 @@
 ---
 title: 事件模型实践
 date: 2016-10-25 19:19:01
-tags: [javascript,event]
-photos: [http://7xkyc9.com1.z0.glb.clouddn.com/jsevent.jpg]
+tags: [code]
+cover: /images/jsevent/jslogo.jpg
 description: 事件传递包含捕获，目标，冒泡三个阶段
 ---
 
@@ -137,7 +137,7 @@ window.onclick = function(){
 4.IE的事件流中只存在冒泡这个阶段，所以为了跟好地兼容IE。。。至于那个只有捕获阶段的网景，有个了解就好。
 5.到这里，标准的浏览器事件已经梳理地差不多了，可能在平时编码过程中的影响不是很大，对它的实现原理的了解不是多多益善吗？
 
-  [1]: http://7xkyc9.com1.z0.glb.clouddn.com/image.png
-  [2]: http://7xkyc9.com1.z0.glb.clouddn.com/result1.png
-  [3]: http://7xkyc9.com1.z0.glb.clouddn.com/result2.png
-  [4]: http://7xkyc9.com1.z0.glb.clouddn.com/result3.png
+  [1]: /images/jsevent/js1.png
+  [2]: /images/jsevent/js2.png
+  [3]: /images/jsevent/js3.png
+  [4]: /images/jsevent/js4.png

@@ -1,9 +1,9 @@
 ---
 title: canvas星空
 date: 2016-11-06 09:54:49
-tags: [canvas,animation]
+tags: [code]
 description: 用canvas为星空添加一些效果
-photos: [http://7xkyc9.com1.z0.glb.clouddn.com/sky.gif]
+cover: /images/canvas-sky/sky.gif
 ---
 
 效果就是这样：
@@ -227,7 +227,6 @@ if (dis < distance) {
 都是一些稍作改动就能实现的玩法。
 
 
-具体[玩一下](../examples/canvas.html)
 
-[1]: http://7xkyc9.com1.z0.glb.clouddn.com/sky.gif
-[2]: http://7xkyc9.com1.z0.glb.clouddn.com/star.gif
+[1]: /images/canvas-sky/sky.gif
+[2]: /images/canvas-sky/star.gif

@@ -2,8 +2,7 @@
 menu:
   Home: /
   Archives: /archives
-  Tags: /tags
-  Categories: /categories
+  About: /about
   Github:
     url: https://github.com/Jevirs/Jevirs.github.io
     icon: github
@@ -12,7 +11,7 @@ menu:
 menu_title: Jervis's
 
 # URL of the Home page image
-index_cover: http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg
+index_cover: /images/cover.jpg
 
 # Default post title
 default_post_title: Untitled
@@ -34,13 +33,13 @@ google_analytics:
 addthis:
 
 # set your own favicon
-favicon:
+favicon: /images/icon.png
 
 # Social Accounts
-twitter_url:
+twitter_url: https://twitter.com/zhujiawei93
 twitter_handle:
-facebook_url:
+facebook_url: https://www.facebook.com/james.zhu.338863
 github_url: https://github.com/Jevirs/Jevirs.github.io
 gitlab_url:
 linkedin_url:
-mailto:
+mailto: z644658982@gmail.com

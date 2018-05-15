@@ -1,9 +1,9 @@
 ---
 title: ELK入坑配置
 date: 2015-11-12 18:03:26
-tags: [elasticsearch,logstash,kibana,ELK]
+tags: [code]
 description: 记录了ELK日志分析系统的基本概念与配置
-photos: [http://7xkyc9.com1.z0.glb.clouddn.com/elastic.svg]
+cover: /images/elastic.jpg
 ---
 
 ## Logstash

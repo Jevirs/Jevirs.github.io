@@ -1,8 +1,8 @@
 ---
 title: coding+hexo部署踩坑经历
 date: 2016-03-14 09:19:01
-tags: [coding,hexo]
-photos: [http://7xkyc9.com1.z0.glb.clouddn.com/coding.png]
+tags: [code]
+cover: /images/coding.png
 description: 使用hexo生成自己的静态博客站点，并配置到coding
 ---
 ## hexo

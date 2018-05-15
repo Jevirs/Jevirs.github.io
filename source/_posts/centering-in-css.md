@@ -1,9 +1,9 @@
 ---
 title: 花式居中
 date: 2015-10-20 19:20:43
-tags: [css,center]
+tags: [code]
 description: 各种条件下的水平居中，垂直居中
-photos: [http://7xkyc9.com1.z0.glb.clouddn.com/flex.png]
+cover: /images/flex.png
 ---
 
 说到css布局，居中是个难题，不同的情境有不同的解决方案，详情如下

@@ -1,9 +1,9 @@
 ---
 title: 认知flux处理数据流
 date: 2016-03-23 17:17:02
-tags: [React,Flux]
+tags: [code]
 description: 这篇文章来自国外一位作者的，文章没有深究flux的具体实现，但对于想入门flux的你会有所收获
-photos: [http://7xkyc9.com1.z0.glb.clouddn.com/flux.png]
+cover: /images/flux.png
 ---
 这篇文章来自国外一位作者的[Flux For Stupid People](http://blog.andrewray.me/flux-for-stupid-people/)，文章没有深究flux的具体实现，但对于想入门flux的你会有所收获。
 

@@ -1,9 +1,8 @@
 ---
 title: js事件循环
 date: 2017-03-26 20:05:49
-tags: [eventLoop,javascript]
+tags: [code]
 description: JavaScript单线程的奥秘
-photos: [http://7xkyc9.com1.z0.glb.clouddn.com/sky.gif]
 ---
 
 要是让我们来谈谈JavaScript这种语言的特点，我想很多人都会想到弱类型，解释型，事件驱动，单线程，原型继承等这几种描述。正是由于些特点，让我们在接触js的时候在类型转换和异步处理等方面踩了很多坑，但这又是JavaScript这门语言吸引人之处。这次我们由js的异步处理入手，来简单了解js为何是单线程的事件驱动的语言。
