@@ -18,7 +18,7 @@ install:
 # 执行的命令
 script:
 - hexo clean
-- hexo generate
+- hexo g
 
 # 部署
 deploy:
