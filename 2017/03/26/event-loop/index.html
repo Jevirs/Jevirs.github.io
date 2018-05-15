@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="JavaScript单线程的奥秘">
+    
 
     <!--Author-->
     
@@ -18,10 +20,12 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Jevirs&#39;s site"/>
+        <meta property="og:title" content="js事件循环"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="JavaScript单线程的奥秘" />
     
 
     <!--Open Graph Site Name-->
@@ -29,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Jevirs&#39;s site</title>
+    <title>js事件循环 - Jevirs&#39;s site</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -143,171 +147,98 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Jevirs's site</h1>
-                    <hr class="small">
-                    <span class="subheading"></span>
+                <div class="post-heading">
+                    <h1>js事件循环</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-03-26
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2017/03/26/event-loop/">
-        <h2 class="post-title">
-            js事件循环
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-03-26
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/02/24/forent-end-study/">
-        <h2 class="post-title">
-            前端，从Light出发
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-02-24
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/01/16/throttle-and-debounce/">
-        <h2 class="post-title">
-            一辆debounce的电梯
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-01-16
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/11/06/canvas-sky/">
-        <h2 class="post-title">
-            canvas星空
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-11-06
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/10/25/js-event/">
-        <h2 class="post-title">
-            事件模型实践
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-10-25
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/03/23/learn-flux/">
-        <h2 class="post-title">
-            认知flux处理数据流
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-03-23
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/03/14/start-hexo/">
-        <h2 class="post-title">
-            coding+hexo部署踩坑经历
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-03-14
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2015/11/12/ELK-solution/">
-        <h2 class="post-title">
-            ELK入坑配置
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2015-11-12
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2015/10/20/centering-in-css/">
-        <h2 class="post-title">
-            花式居中
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2015-10-20
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/eventLoop/">#eventLoop</a> <a href="/tags/javascript/">#javascript</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
 
-            <ul class="pager">
-    
-    
-</ul>
-        </div>
+            <!-- Gallery -->
+            
+                
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="row">
+        
+            
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                    <a href="#" data-featherlight="http://7xkyc9.com1.z0.glb.clouddn.com/sky.gif">
+                        <img src="http://7xkyc9.com1.z0.glb.clouddn.com/sky.gif" class="img-thumbnail img-responsive" />
+                    </a>
+                </div>
+            
+        
     </div>
 </div>
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>要是让我们来谈谈JavaScript这种语言的特点，我想很多人都会想到弱类型，解释型，事件驱动，单线程，原型继承等这几种描述。正是由于些特点，让我们在接触js的时候在类型转换和异步处理等方面踩了很多坑，但这又是JavaScript这门语言吸引人之处。这次我们由js的异步处理入手，来简单了解js为何是单线程的事件驱动的语言。</p>
+<h2 id="异步处理"><a href="#异步处理" class="headerlink" title="异步处理"></a>异步处理</h2><blockquote>
+<p>何为异步处理? </p>
+</blockquote>
+<p>计算机科学技术高度发达的如今，计算机的计算能力已经达到了每秒亿万级的级别了，多么复杂的计算也都轻松应对，但是包括网络请求，文件读取等操作会大大增加程序执行完毕的时间。因为网络传输速度和磁盘的读取速度远远不及CPU处理速度。因此我们提出了同步，异步，阻塞，非阻塞这些概念，可以简单地理解</p>
+<p>1 老张把水壶放到火上，立等水开。（同步阻塞）老张觉得自己有点傻</p>
+<p>2 老张把水壶放到火上，去客厅看电视，时不时去厨房看看水开没有。（同步非阻塞）老张还是觉得自己有点傻，于是变高端了，买了把会响笛的那种水壶。水开之后，能大声发出嘀~~~~的噪音。</p>
+<p>3 老张把响水壶放到火上，立等水开。（异步阻塞）老张觉得这样傻等意义不大</p>
+<p>4 老张把响水壶放到火上，去客厅看电视，水壶响之前不再去看它了，响了再去拿壶。（异步非阻塞）老张觉得自己聪明了。</p>
+<p>同步和异步关注的是消息通信机制 (synchronous communication/ asynchronous communication)<br>所谓同步，就是在发出一个<em>调用</em>时，在没有得到结果之前，该<em>调用</em>就不返回。但是一旦调用返回，就得到返回值了。换句话说，就是由<em>调用者</em>主动等待这个<em>调用</em>的结果。<br>而异步则是相反，<em>调用</em>在发出之后，这个调用就直接返回了，所以没有返回结果。换句话说，当一个异步过程调用发出后，调用者不会立刻得到结果。而是在<em>调用</em>发出后，<em>被调用者</em>通过状态、通知来通知调用者，或通过回调函数处理这个调用。</p>
+<p>阻塞和非阻塞关注的是程序在等待调用结果（消息，返回值）时的状态.<br>阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。<br>非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程。</p>
+<h3 id="传统的AJAX回调"><a href="#传统的AJAX回调" class="headerlink" title="传统的AJAX回调"></a>传统的AJAX回调</h3><p>上面的例子已经能看出</p>
 
 
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
 
     <!-- Footer -->
     <hr />

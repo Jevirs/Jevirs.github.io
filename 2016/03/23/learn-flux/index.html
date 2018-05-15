@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="这篇文章来自国外一位作者的，文章没有深究flux的具体实现，但对于想入门flux的你会有所收获">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jevirs">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="认知flux处理数据流"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="这篇文章来自国外一位作者的，文章没有深究flux的具体实现，但对于想入门flux的你会有所收获" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Jevirs&#39;s site"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>认知flux处理数据流 - Jevirs&#39;s site</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>认知flux处理数据流</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2016-03-23
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/React/">#React</a> <a href="/tags/Flux/">#Flux</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+                
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="row">
+        
+            
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                    <a href="#" data-featherlight="http://7xkyc9.com1.z0.glb.clouddn.com/flux.png">
+                        <img src="http://7xkyc9.com1.z0.glb.clouddn.com/flux.png" class="img-thumbnail img-responsive" />
+                    </a>
+                </div>
+            
+        
+    </div>
+</div>
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>这篇文章来自国外一位作者的<a href="http://blog.andrewray.me/flux-for-stupid-people/" target="_blank" rel="noopener">Flux For Stupid People</a>，文章没有深究flux的具体实现，但对于想入门flux的你会有所收获。</p>
+<h2 id="我应该使用Flux么"><a href="#我应该使用Flux么" class="headerlink" title="我应该使用Flux么"></a>我应该使用Flux么</h2><ul>
+<li>如果你的应用有很多动态数据需要处理，你可能需要flux。</li>
+<li>如果你的应用多包含静态视图，并且很少涉及到数据的存储和更新，那么flux也许不会给你带来任何好处。</li>
+</ul>
+<h2 id="什么是Flux"><a href="#什么是Flux" class="headerlink" title="什么是Flux"></a>什么是Flux</h2><p>Flux通过事件和监听来实现了单向数据流，具体请看后文。<br>我们在示例代码中使用了这两个库：<a href="https://github.com/facebook/flux/blob/master/src/Dispatcher.js" target="_blank" rel="noopener">Flux Dispatcher</a>和<a href="http://notes.jetienne.com/2011/03/22/microeventjs.html" target="_blank" rel="noopener">microevent.js</a>。</p>
+<p>官方的文档过于意识流，不适合新手学习。我们在学习时也不要将Flux与一些MVC框架相比，否则你会更加迷惑。</p>
+<p><em>下面是一些Flux中提到的基本概念</em>：</p>
+<h2 id="1-Your-Views-“Dispatch”-“Actions”-视图触发事件"><a href="#1-Your-Views-“Dispatch”-“Actions”-视图触发事件" class="headerlink" title="1. Your Views “Dispatch” “Actions”(视图触发事件)"></a>1. Your Views “Dispatch” “Actions”(视图触发事件)</h2><p>dispatcher 是一个基本的事件系统，他有自己的一些规则。他会广播事件，并注册回调函数。这里我们有仅一个全局的dispatcher。你应该使用FB的<a href="https://github.com/facebook/flux/blob/master/src/Dispatcher.js" target="_blank" rel="noopener">Dispatcher Library</a>。初始化很容易：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> AppDispatcher = <span class="keyword">new</span> Dispatcher();</span><br></pre></td></tr></table></figure></p>
+<p>假设你有一个按钮，点击之后会向列表增加一条数据。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.createNewItem&#125;</span>&gt;</span>New Item<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>点击之后，你的视图会分发一个action，其中有action的名称和增加的数据内容:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">createNewItem:<span class="function"><span class="keyword">function</span>(<span class="params">evt</span>)</span>&#123;</span><br><span class="line">  AppDispatcher.dispatch(&#123;</span><br><span class="line">      actionName: <span class="string">'new-item'</span>, </span><br><span class="line">      newItem: &#123;<span class="attr">name</span>:<span class="string">'Marco'</span>&#125; <span class="comment">// 所需要增加的一条数据 </span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>“action”是一个核心概念。他是一个js对象，描述了我们需要做的事和我们需要的数据。如上所述，我们要做的是添加一条数据，我们需要的数据是一个名叫”Marco”的name。</p>
+<h2 id="Your-“Store”-Responds-to-Dispatched-Actions-store触发回调"><a href="#Your-“Store”-Responds-to-Dispatched-Actions-store触发回调" class="headerlink" title="Your “Store” Responds to Dispatched Actions(store触发回调)"></a>Your “Store” Responds to Dispatched Actions(store触发回调)</h2><p>store也是一个核心概念。我们在应用中创建一个集合，存放方法和数据，它通常是一个列表。</p>
+<p>store是单例的，在你的整个应用中只有一个store存在：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Single object representing list data and logic</span></span><br><span class="line"><span class="keyword">var</span> ListStore = &#123;  </span><br><span class="line"><span class="comment">// Actual collection of model data </span></span><br><span class="line">  items: []</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>store会对被分发的action做出处理：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ListStore = ...</span><br><span class="line"></span><br><span class="line"><span class="comment">//在dispatcher中注册我们需要监听的一些事件</span></span><br><span class="line">AppDispatcher.register( <span class="function"><span class="keyword">function</span>(<span class="params"> payload </span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>( payload.actionName )｛</span><br><span class="line">        <span class="comment">//对action作出处理</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'new-item'</span>:</span><br><span class="line">            <span class="comment">//存储一个数据</span></span><br><span class="line">            ListStore.items.push(payload.newItem);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>以上是一个典型的例子，介绍了Flux处理回调函数的方式。传入的参数payload包含了action的名称和需要处理的数据。<br>switch语句中会对相应的action做出数据的处理。</p>
+<p>关键概念：</p>
+<ul>
+<li>store不是MVC中的model，但是它包含了models。</li>
+<li>应用中数据处理只能在store中进行，这是Flux核心理念。被分发的action无法增加或者删除一条数据。</li>
+</ul>
+<p>假设，你的应用中需要保存一些图片及其基本信息，那么你应该再创建一个Items，命名为ImageItems。一个数组即可代表一种数据类型了。</p>
+<p>只有stores能够注册被分发action的回调函数。千万不要在视图中调用<em>AppDispatcher.register</em>。dispatcher只会单向地从视图传递数据给store。视图会针对不同的事件重新渲染。</p>
+<h2 id="Your-Store-Emits-a-“Change”-Event-store触发change事件"><a href="#Your-Store-Emits-a-“Change”-Event-store触发change事件" class="headerlink" title="Your Store Emits a “Change” Event(store触发change事件)"></a>Your Store Emits a “Change” Event(store触发change事件)</h2><p>现在，store中的数据已经改变了，我们传递出数据改变的信息了。</p>
+<p>我们将让store出发一个事件，如果在你使用了<a href="http://notes.jetienne.com/2011/03/22/microeventjs.html" target="_blank" rel="noopener">MicroEvent.js</a>：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MicroEvent.mixin( ListStore );</span><br></pre></td></tr></table></figure></p>
+<p>然后触发change事件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="string">'new-item'</span>:</span><br><span class="line">     ListStore.items.push( payload.newItem ); </span><br><span class="line">  </span><br><span class="line">   <span class="comment">// Tell the world we changed! </span></span><br><span class="line">     ListStore.trigger(<span class="string">'change'</span>);</span><br><span class="line">     <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure></p>
+<p>关键概念：</p>
+<ul>
+<li>事件触发的时候不传递数据，视图只关心是否有数据发生变化。</li>
+</ul>
+<h2 id="Your-View-Responds-to-the-“Change”-Event（视图接收到事件重新渲染）"><a href="#Your-View-Responds-to-the-“Change”-Event（视图接收到事件重新渲染）" class="headerlink" title="Your View Responds to the “Change” Event（视图接收到事件重新渲染）"></a>Your View Responds to the “Change” Event（视图接收到事件重新渲染）</h2><p>视图会在数据发生变化后重新渲染，没错是重新渲染。</p>
+<p>我们在react组件的初始化完成后为store注册监听：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount: <span class="function"><span class="keyword">function</span>(<span class="params"> </span>) </span>&#123;</span><br><span class="line">    ListStore.bind( <span class="string">'change'</span>, <span class="keyword">this</span>.listChanged );</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>为了简单起见，我们调用forceUpdate，使视图重新渲染。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">listChanged : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.forceUpdate( );</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>别忘记在组件回收时，解绑监听的事件:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">componentWillUnmount: <span class="function"><span class="keyword">function</span>(<span class="params"> </span>)</span>&#123;</span><br><span class="line">      ListStore.unbind( <span class="string">'change'</span>, <span class="keyword">this</span>.listChanged );</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>然后来看下组件的render函数:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">    <span class="comment">// Remember, ListStore is global!  </span></span><br><span class="line">    <span class="comment">// There's no need to pass it around </span></span><br><span class="line">    <span class="keyword">var</span> items = ListStore.getAll();  </span><br><span class="line">    <span class="comment">// Build list items markup by looping  </span></span><br><span class="line">    <span class="comment">// over the entire list </span></span><br><span class="line">    <span class="keyword">var</span> itemHtml = items.map( <span class="function"><span class="keyword">function</span>(<span class="params"> listItem </span>) </span>&#123;  </span><br><span class="line">      <span class="comment">// "key" is important, should be a unique  </span></span><br><span class="line">      <span class="comment">// identifier for each list item </span></span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;listItem.id&#125;</span>&gt;</span></span></span><br><span class="line"><span class="xml">              &#123;listItem.name&#125;</span></span><br><span class="line"><span class="xml">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span>; </span><br><span class="line">      &#125;);</span><br><span class="line">     <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="xml">                  <span class="tag">&lt;<span class="name">ul</span>&gt;</span> &#123;itemHtml&#125; <span class="tag">&lt;/<span class="name">ul</span>&gt;</span> </span></span><br><span class="line"><span class="xml">                  <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.createNewItem&#125;</span>&gt;</span>New Item<span class="tag">&lt;/<span class="name">button</span>&gt;</span> </span></span><br><span class="line"><span class="xml">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们已经完成了整个数据，视图更新过程.当你添加一条数据的时候，视图会分发一个action，store会对action做出数据处理，并且触发一个change事件，之后视图接受到change事件并重新渲染。</p>
+<p>但是有一个问题，每当数据更新的时候，视图将全部重新渲染，这样是否会造成效率低下？<br>其实并不会发生你所担心的事情，React内部构建了虚拟DOM，react会比较视图是否发生变化，实现部分的渲染，是以JS计算开销换取了dom渲染开销的方法来提升效率。</p>
+<h2 id="One-More-Thing-What-The-Hell-Is-An-“Action-Creator”-（Action-Creator是什么鬼？）"><a href="#One-More-Thing-What-The-Hell-Is-An-“Action-Creator”-（Action-Creator是什么鬼？）" class="headerlink" title="One More Thing: What The Hell Is An “Action Creator”?（Action Creator是什么鬼？）"></a>One More Thing: What The Hell Is An “Action Creator”?（Action Creator是什么鬼？）</h2><p>我们在点击按钮的时候触发了一个action<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AppDispatcher.dispatch(&#123;</span><br><span class="line">     eventName: <span class="string">'new-item'</span>, </span><br><span class="line">     newItem: &#123;<span class="attr">name</span>: <span class="string">'Samantha'</span>&#125;</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>当我们拥有很多按钮，需要出发不同的action时，我们需要这么写看起来会比较优雅：<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ListActions = &#123; </span><br><span class="line">  add: <span class="function"><span class="keyword">function</span>(<span class="params"> item </span>) </span>&#123; </span><br><span class="line">    AppDispatcher.dispatch(&#123; </span><br><span class="line">        eventName: <span class="string">'new-item'</span>, </span><br><span class="line">        newItem: item </span><br><span class="line">    &#125;); </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> del: ...</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>现在增加一条数据的时候就只需要这么写：<em>ListActions.add({name: ‘…’})</em></p>
+<h2 id="PS-不要使用-forceUpdate"><a href="#PS-不要使用-forceUpdate" class="headerlink" title="PS:不要使用 forceUpdate"></a>PS:不要使用 <em>forceUpdate</em></h2><p>文中只为了简单起见，使用了<em>forceUpdate</em>，正确的做法应该从store中读取数据，并且改变state，触发视图更新。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 Jevirs<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
