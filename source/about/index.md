@@ -1,6 +1,5 @@
 ---
-title: 关于我
-date: 2018-05-15 14:15:01
+title: 关于
 cover: /images/about.jpg
 ---
 

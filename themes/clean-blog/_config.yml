@@ -1,7 +1,7 @@
 # Header
 menu:
   Home: /
-  Archives: /archives
+  Tags: /tags
   About: /about
   Github:
     url: https://github.com/Jevirs/Jevirs.github.io
@@ -19,7 +19,7 @@ default_post_title: Untitled
 # Comments. Choose one by filling up the information
 comments:
   # Disqus comments
-  disqus_shortname:
+  disqus_shortname: 
   # Facebook comments
   facebook:
     appid:
