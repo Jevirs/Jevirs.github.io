@@ -31,6 +31,3 @@ deploy:
   target-branch: master
   on:
     branch: source
-
-notifications:
-   webhooks: https://oapi.dingtalk.com/robot/send?access_token=b16ce1814cd5e856dc6e8d4d7ba6d8b58963bad777867515210a29252874aadb
