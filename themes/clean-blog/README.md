@@ -1,5 +1,9 @@
 # Clean Blog Hexo
 
+## 修改
+
+修改为BootCDN,反代谷歌字体,加快国内加载速度
+
 ![](http://www.codeblocq.com/img/hexo-theme-thumbnail/CleanBlog.png)
 
 Hexo implementation of [Clean Blog](http://blackrockdigital.github.io/startbootstrap-clean-blog/index.html)
